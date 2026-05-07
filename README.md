@@ -22,6 +22,15 @@ Denoising State Refinement (DSR): Refines the initial estimate using a single ad
 
 3. Inpainting (e.g., random binary masks with 80% missing pixels)
 
+
+# Qualitative Results
+
+<img width="1168" height="843" alt="Snipaste_2026-05-07_11-50-28" src="https://github.com/user-attachments/assets/9e2449f0-95c3-45f7-9b98-0df98608c1f8" />
+<img width="1146" height="733" alt="Snipaste_2026-05-07_11-50-13" src="https://github.com/user-attachments/assets/2bf8f0a6-7933-410c-baf4-4f71ced35009" />
+<img width="1272" height="821" alt="Snipaste_2026-05-07_11-49-42" src="https://github.com/user-attachments/assets/84749db8-d1d6-457b-9110-4d7f13c6aa7e" />
+
+
+
 # Setup
 
 ## Installation
@@ -33,7 +42,7 @@ To clone this repository and the code, run:
 Bash
 
 ```
-https://github.com/Xydon-9/NGCM.git
+git clone https://github.com/Xydon-9/NGCM.git
 ```
 
 ## Pre-Trained Models
@@ -63,6 +72,9 @@ Download it and place it in `NGCM/exp/logs/imagenet/`.
 
 The datasets used in the paper are LSUN bedroom, LSUN cat and ImageNet.
 
-Both LSUN Bedroom and LSUN Cat validation sets used in the paper can be found [here](https://drive.google.com/drive/folders/1umSbW_91LTJuK11Il_pmleC4OPei7LAE?usp=sharing)(CM4IR and Cosign)
+Both LSUN Bedroom and LSUN Cat validation sets used in the paper can be found [here](https://drive.google.com/drive/folders/1umSbW_91LTJuK11Il_pmleC4OPei7LAE?usp=sharing)(Same LSUN setting as CoSIGN and CM4IR)
 
 ImageNet can be found in: [[Google drive](https://drive.google.com/drive/folders/1cSCTaBtnL7OIKXT4SVME88Vtk4uDd_u4?usp=sharing)](DDNM)
+
+
+This implementation is inspired by https://github.com/openai/consistency_models and https://github.com/bahjat-kawar/ddrm and https://github.com/tirer-lab/CM4IR.
