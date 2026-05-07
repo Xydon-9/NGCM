@@ -49,7 +49,7 @@ git clone https://github.com/Xydon-9/NGCM.git
 
 We used the identical pre-trained Consistency Models provided by OpenAI as used in previous SOTA methods in the [CM repo](https://github.com/openai/consistency_models?tab=readme-ov-file#pre-trained-models).
 
-To set the models used in the paper:
+To set the models used in the paper
 
 ### LSUN Bedroom
 
