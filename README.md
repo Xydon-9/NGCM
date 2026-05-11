@@ -29,6 +29,23 @@ Denoising State Refinement (DSR): Refines the initial estimate using a single ad
 <img width="1146" height="733" alt="Snipaste_2026-05-07_11-50-13" src="https://github.com/user-attachments/assets/2bf8f0a6-7933-410c-baf4-4f71ced35009" />
 <img width="1272" height="821" alt="Snipaste_2026-05-07_11-49-42" src="https://github.com/user-attachments/assets/84749db8-d1d6-457b-9110-4d7f13c6aa7e" />
 
+# Hyperparameters Setting
+<img width="1197" height="410" alt="image" src="https://github.com/user-attachments/assets/30b6754b-56c7-488b-86ab-17261a0ab9e9" />
+
+# Quick Start
+
+#---- Noise level 0.025 ----
+Super-Resolution Bicubic x4
+python main.py --config lsun_bedroom_256.yml --path_y lsun_bedroom --deg sr_bicubic --deg_scale 4 \
+  --sigma_y 0.025 -i NGCM_lsun_bedroom_sr_bicubic_sigma_y_0.025 --iN 400 --gamma 0.7 \
+  --model_ckpt lsun_bedroom/cd_bedroom256_lpips.pt --deltas "0,0.3,0.1,0"  --use_dsr 1 --use_nnp 1  --T_sampling 4 
+
+Gaussian Deblurring
+python main.py --config lsun_bedroom_256.yml --path_y lsun_bedroom --deg deblur_gauss \
+  --sigma_y 0.025 -i NGCM_lsun_bedroom_deblur_gauss_sigma_y_0.025 --iN 90 --gamma 0.02 \
+  --zeta 3 --model_ckpt lsun_bedroom/cd_bedroom256_lpips.pt --deltas "0,0.1,0,0" --eta 0 --use_dsr 1 --use_nnp 1  --T_sampling 4 
+
+
 
 
 # Setup
@@ -75,6 +92,9 @@ The datasets used in the paper are LSUN bedroom, LSUN cat and ImageNet.
 Both LSUN Bedroom and LSUN Cat validation sets used in the paper can be found [here](https://drive.google.com/drive/folders/1umSbW_91LTJuK11Il_pmleC4OPei7LAE?usp=sharing)(Same LSUN setting as CoSIGN and CM4IR)
 
 ImageNet can be found in: [[Google drive](https://drive.google.com/drive/folders/1cSCTaBtnL7OIKXT4SVME88Vtk4uDd_u4?usp=sharing)](DDNM)
+
+
+
 
 
 This implementation is inspired by https://github.com/openai/consistency_models and https://github.com/bahjat-kawar/ddrm and https://github.com/tirer-lab/CM4IR.
