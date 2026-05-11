@@ -76,7 +76,7 @@ class Diffusion(object):
         model = create_model(**config_dict)
         ckpt = os.path.join(self.args.exp, f"logs/{self.args.model_ckpt}")
         if not os.path.exists(ckpt):
-            raise ValueError(f"Model ckpt not found in: {ckpt}. Please refer to https://github.com/tirer-lab/NGCM.git"
+            raise ValueError(f"Model ckpt not found in: {ckpt}. Please refer to https://github.com/Xydon-9/NGCM.git"
                              f"to see where the models that were used in the paper can be found.")
 
         model.load_state_dict(torch.load(ckpt, map_location=self.device))
